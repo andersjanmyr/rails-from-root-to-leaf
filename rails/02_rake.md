@@ -1,3 +1,6 @@
+!SLIDE center
+![rails_rakefile](rails_rakefile.png)
+
 !SLIDE
 # Rake, Ruby Make
 
@@ -26,7 +29,7 @@
     rake hello    # Says hello
 
 !SLIDE commandline incremental
-# rake # invoke rake
+# rake goodbye # invoke rake
 
     $ rake hello
     hello
