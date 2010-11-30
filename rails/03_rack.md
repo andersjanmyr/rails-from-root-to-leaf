@@ -1,5 +1,5 @@
 !SLIDE center
-![rails_config](rails_config.png)
+![rails_config_ru](rails_config_ru.png)
 
 !SLIDE code
 # config.ru - Rack
