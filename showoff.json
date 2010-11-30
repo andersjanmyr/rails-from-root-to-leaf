@@ -1,0 +1,10 @@
+{ "name": "Rails Sydsvenskan", 
+    "sections": [ 
+        {"section":"intro"},
+        {"section":"rails"},
+        {"section":"ruby"},
+        {"section":"books"},
+        {"section":"tools_and_gems"},
+        {"section":"web"}
+    ]
+}
