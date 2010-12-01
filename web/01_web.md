@@ -1,4 +1,7 @@
 !SLIDE center
+# Web Resources
+
+!SLIDE center
 # Ruby 5
 ## http://ruby5.envylabs.com/
 

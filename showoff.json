@@ -6,6 +6,7 @@
         {"section":"books"},
         {"section":"tools_and_gems"},
         {"section":"web"},
-        {"section":"web"}
+        {"section":"jruby"},
+        {"section":"end"}
     ]
 }
