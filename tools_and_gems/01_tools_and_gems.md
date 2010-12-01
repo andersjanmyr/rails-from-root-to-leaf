@@ -150,7 +150,8 @@
     @@@ruby
     # config/initializer/omniauth.rb
     Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+      provider :twitter, ENV['TWITTER_CONSUMER_KEY'],
+        ENV['TWITTER_CONSUMER_SECRET']
     end
 
     # routes.rb
@@ -166,7 +167,19 @@
 !SLIDE code
 # cucumber (test)
 
-    @@@ruby
+    @@@python
+    Feature: Search courses
+      In order to ensure better utilization of courses
+      Potential students should be able to search for courses
+
+      Scenario: Search by topic
+        Given there are 240 courses which do not have the topic "biology"
+        And there are 2 courses A001, B205 that each have "biology" as one of the topics
+        When I search for "biology"
+        Then I should see the following courses:
+          | Course code |
+          | A001        |
+          | B205        |
 
 
 !SLIDE code
@@ -191,6 +204,15 @@
 # irbtools (irb)
 
     @@@ruby
+    * wirble colorize output
+    * fancy_irbt put result as comment and more colorization
+    * hirb (active record) tables and custom views for specific objects
+    * fileutils cd, pwd, ln_s, mv, rm, mkdir, touch … ;)
+    * ap nice debug printing (ap)
+    * yaml nice debug printing (y)
+    * clipboard easy clipboard access (copy & paste)
+    * guessmethod automatically corrects typos (method_missing hook)
+
 
 
 

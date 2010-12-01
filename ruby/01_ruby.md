@@ -4,6 +4,7 @@
 * Happiness
 * Flexibility
 * Lightness
+* Glue
 
 !SLIDE code
 # Parallel Assignment
