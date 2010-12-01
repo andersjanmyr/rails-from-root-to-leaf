@@ -1,10 +1,11 @@
 { "name": "Rails from Root to Leaf",
     "sections": [
         {"section":"intro"},
-        {"section":"rails"},
         {"section":"ruby"},
+        {"section":"rails"},
         {"section":"books"},
         {"section":"tools_and_gems"},
+        {"section":"web"},
         {"section":"web"}
     ]
 }
