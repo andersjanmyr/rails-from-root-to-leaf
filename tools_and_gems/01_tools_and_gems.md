@@ -8,14 +8,73 @@
 !SLIDE
 # Livereload
 
-!SLIDE
+!SLIDE code
 # terminitor
+
+    @@@ruby
+    tab "LiveReload" do
+      tab_name("Livereload")
+      run "rvm use system"
+      run "livereload"
+    end
+
+    tab "Rails" do
+      tab_name("Rails")
+      run "rails server"
+    end
+
+    tab "Bash" do
+      run "cd ~/projects/helios"
+    end
 
 !SLIDE
 # autotest
 
 !SLIDE
 # Spork
+
+!SLIDE code
+# Watchr
+
+    @@@ruby
+    watch('test/test_helper\.rb') { run_all_tests }
+    watch('test/.*/.*_test\.rb') { |m| run_test_file(m[0]) }
+    watch('app/.*/.*\.rb') do |m|
+        related_test_files(m[0]).map do|tf| run_test_file(tf) }
+    end
+    watch('features/.*/.*\.feature') { run_all_features }
+
+!SLIDE
+# Capistrano
+
+    @@@sh
+    cap deploy               # Deploys your project.
+    cap deploy:migrations    # Deploy and run pending migrations.
+    ...
+    cap deploy:rollback      # Rolls back to a previous version and restarts.
+    cap deploy:setup         # Prepares one or more servers for deployment.
+    cap deploy:start         # Start the application servers.
+    cap deploy:stop          # Stop the application servers.
+    cap invoke               # Invoke a single command on the remote servers.
+    cap shell
+
+!SLIDE
+# God
+
+    @@@ruby
+    God.watch do |w|
+        w.name = "gravatar2-mongrel-#{port}"
+        w.interval = 30.seconds # default
+        w.start = "mongrel_rails start -c #{RAILS_ROOT} -p #{port} \
+          -P #{RAILS_ROOT}/log/mongrel.#{port}.pid  -d"
+        w.stop = "mongrel_rails stop -P #{RAILS_ROOT}/log/mongrel.#{port}.pid"
+        w.restart = "mongrel_rails restart -P #{RAILS_ROOT}/log/mongrel.#{port}.pid"
+        w.start_grace = 10.seconds
+        w.restart_grace = 10.seconds
+        w.pid_file = File.join(RAILS_ROOT, "log/mongrel.#{port}.pid")
+
+        ...
+     end
 
 
 !SLIDE
